@@ -1,0 +1,50 @@
+<!-- KMP Search Component Template -->
+<div>
+  <label for="pattern">Pattern:</label>
+  <input type="text" id="pattern" [(ngModel)]="pattern" placeholder="Enter pattern" required>
+
+  <!-- In your kmp-search.component.html -->
+  <label for="text">Text:</label>
+  <input type="text" id="text" [(ngModel)]="text" placeholder="Enter text" required>
+
+
+  <button (click)="performKMPSearch()">Search and Draw</button>
+
+  <div id="kmp-search-output">
+    <!-- Results and Visualizations -->
+    <!-- Prefix Function Table -->
+    <div *ngIf="prefixFunctionTable.length > 0">
+      <table>
+        <tr>
+          <th>i</th>
+          <th>P[i]</th>
+          <th>π[i]</th>
+        </tr>
+        <tr *ngFor="let row of prefixFunctionTable">
+          <td>{{ row.i }}</td>
+          <td>{{ row.p_i }}</td>
+          <td>{{ row.pi_i }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="cy" style="width: 1000px; height: 200px;" *ngIf="graphData">
+      <!-- Cytoscape graph will be rendered here -->
+    </div>
+
+    <!-- Comparisons Table -->
+    <div *ngIf="comparisonsTable.length > 0">
+      <table>
+        <tr>
+          <th>Index</th>
+          <th>Match</th>
+        </tr>
+        <tr *ngFor="let comparison of comparisonsTable">
+          <td>{{ comparison.index }}</td>
+          <td>{{ comparison.match ? 'Yes' : 'No' }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>

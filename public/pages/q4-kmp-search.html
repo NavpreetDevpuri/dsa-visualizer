@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph Visualization</title>
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+</head>
+
+<body>
+
+  <label for="pattern">Pattern:</label>
+  <input type="text" id="pattern" placeholder="Enter pattern" value="abaabab" required>
+
+  <label for="text">Text:</label>
+  <input type="text" id="text" placeholder="Enter text" value="abababaabaabbababaab" required>
+
+  <button id="search-btn">Search and Draw</button>
+
+  <script type="module" src="../scripts/q4-kmp-search.js"></script>
+  <br>
+  <br>
+  <div id="kmp-search-output">
+    Prefix Function
+    <div id="prefix-function">
+
+    </div>
+    Flow chart
+    <div id="cy" style="width: 1000px; height: 200px;">
+    </div>
+
+    Processing the text with the KMP algorithm
+    <div id="processing-text">
+    </div>
+
+    <div id="found-indices">
+    </div>
+  </div>
+
+</body>
+
+</html>

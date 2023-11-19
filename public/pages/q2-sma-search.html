@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graph Visualization</title>
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+</head>
+
+<body>
+
+  <label for="pattern">Pattern:</label>
+  <input type="text" id="pattern" placeholder="Enter pattern" value="ababaca" required>
+
+  <label for="text">Text:</label>
+  <input type="text" id="text" placeholder="Enter text" value="abababacaba" required>
+
+  <button id="search-btn">Search and Draw</button>
+
+  <script type="module" src="../scripts/q2-sma-search.js"></script>
+  <br>
+  <br>
+  <div id="sma-search-output">
+    Transition table
+    <div id="transition-table">
+
+    </div>
+    Flow chart
+    <div id="cy" style="width: 1000px; height: 200px;">
+    </div>
+
+    Processing the text with the SMA algorithm.
+    <div id="processing-text">
+    </div>
+
+  </div>
+
+</body>
+
+</html>
